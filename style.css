@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    color: #fff;
+}
+
+.container {
+    padding: 50px;
+}
+
+h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 20px;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.teddy, .flowers {
+    width: 250px;
+    margin: 20px 0;
+}
+
+.btn {
+    background-color: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #ff1e4d;
+    transform: scale(1.1);
+}
+
+/* Different Backgrounds */
+
+.page1 {
+    background: linear-gradient(to right, #ff9a9e, #fecfef);
+}
+
+/* Soft pink gradient with floating white hearts on page2 */
+.page2 {
+    position: relative;
+    background: linear-gradient(135deg, #ffd6e8, #ffc0cb);
+    min-height: 100vh;
+    padding-top: 120px;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    font-weight: 500;
+}
+
+/* Container styling for page2 */
+.page2 .container {
+    max-width: 600px;
+    margin: auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+}
+
+/* Button styling for page2 */
+.page2 .btn {
+    background-color: #ff5c7c;
+    padding: 15px 40px;
+    font-size: 20px;
+    border-radius: 40px;
+    box-shadow: 0 6px 15px rgba(255, 92, 124, 0.6);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    border: none;
+    color: white;
+}
+
+.page2 .btn:hover {
+    background-color: #ff2a53;
+}
+
+/* Floating soft white hearts background using radial gradients */
+.page2::before {
+    content: "";
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background-image:
+        radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.15) 10px, transparent 11px),
+        radial-gradient(circle at 30% 40%, rgba(255, 255, 255, 0.1) 8px, transparent 9px),
+        radial-gradient(circle at 50% 70%, rgba(255, 255, 255, 0.12) 12px, transparent 13px),
+        radial-gradient(circle at 70% 30%, rgba(255, 255, 255, 0.1) 10px, transparent 11px),
+        radial-gradient(circle at 90% 60%, rgba(255, 255, 255, 0.14) 9px, transparent 10px);
+    background-repeat: repeat;
+    animation: floatHearts 30s linear infinite;
+    z-index: 1;
+}
+
+/* Animation to gently move the hearts */
+@keyframes floatHearts {
+    0% {
+        background-position: 0 0, 0 0, 0 0, 0 0, 0 0;
+    }
+    100% {
+        background-position: 100% 100%, 80% 120%, 60% 90%, 40% 140%, 20% 110%;
+    }
+}
+
+.page3 {
+    background: linear-gradient(to right, #ffecd2, #fcb69f);
+}
+
+.page4 {
+    background: linear-gradient(to right, #89f7fe, #a18cd1);
+}
+
+/* Gallery Styling */
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 images per row */
+    gap: 25px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.image-gallery img {
+    width: 100%;
+    aspect-ratio: 1 / 1;   /* Perfect square */
+    object-fit: cover;     /* Crop properly */
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .image-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+.big-text {
+    font-size: 29px;
+}
+
+.bigi-text {
+    font-size: 42px;
+}
+
